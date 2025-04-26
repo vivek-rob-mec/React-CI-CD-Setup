@@ -1,19 +1,24 @@
-name: "Simple react CI Pipeline  / Workflow"
+name: "Simple react CI Pipeline  / Workflow" # name of the pipeline or workflow
 
-on:
+on:  # event: It will run this workflow whenever we push code on master or main branch
     push:
         branches:
             - master
 
 jobs:
-    build-and-test:
-        runs-on: ubuntu-latest
+    build-and-test: # job name
+        runs-on: ubuntu-latest # environment on which this job is going to run
 
-        steps:    # first step is to setup node.js on a github runner machine
-            - name: "Setup Node JS"
-              uses: actions/setup-node@v4 
+        steps:    
+            - name: "Setup Node JS" # first step is to setup node.js on a github runner machine
+              uses: actions/setup-node@v4  # Help us to define github action i.e. action for setting nodejs
               with:
-                node-version: '21' 
+                node-version: '21' # this action expects a variable i.e. which node version
+                                   # we want to say, we define using 'with', so this is kind of be a 
+                                   # variable for action with variable 'node-version'.
 
-            - name: "Check Node Version"
-              run: node --version
+            - name: "Check Node Version" # second step ist check node version 
+              run: node --version # runs a basic linux command.
+
+            - name: "Clone the repository"
+              uses: actions/checkout@v2
