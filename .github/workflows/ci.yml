@@ -1,0 +1,16 @@
+name: "Simple react CI Pipeline  / Workflow"
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build-and-test:
+        runs-on: ubuntu-latest
+
+        steps:    # first step is to setup node.js on a github runner machine
+            - name: "Setup Node JS"
+              uses: actions/setup-node@v4 
+              with:
+                node-version: '21' 
