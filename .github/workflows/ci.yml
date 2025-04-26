@@ -31,3 +31,9 @@ jobs:
 
             - name: "List Directories" # on running this again node_modules is being added
               run: ls
+
+            - name: 'Run tests'
+              run : npm test
+
+            - name: 'Run build'
+              run: npm run build
