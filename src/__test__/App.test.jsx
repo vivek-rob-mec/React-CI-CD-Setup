@@ -1,6 +1,6 @@
 // src/__test__/App.test.js
 
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import App from '../App';
 import { Component } from "react";
 import { expect } from "vitest";
