@@ -25,7 +25,7 @@ jobs:
             - name: "Download artifact"
               uses: actions/download-artifact@v4
               with:
-                name: build // job name is same as in ci.yml file i.e "Upload production ready build files"
+                name: build ## job name is same as in ci.yml file i.e "Upload production ready build files"
                 run-id: ${{github.event.workflow_run.id}}
                 github-token: ${{github.token}}
 
