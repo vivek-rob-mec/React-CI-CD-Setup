@@ -3,6 +3,7 @@ name: "Simple react CI Pipeline  / Workflow" # name of the pipeline or workflow
 on:  # event: It will run this workflow whenever we push code on master or main branch
     push:
         branches:
+            - main
             - master
 
 jobs:
@@ -44,5 +45,5 @@ jobs:
             - name: "Upload production ready build files"
               uses: actions/upload-artifact@v4
               with:
-                name: build
+                name: build # this name should be used while downloding artifacts in cd.yml file
                 path: dist
