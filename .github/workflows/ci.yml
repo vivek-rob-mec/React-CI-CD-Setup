@@ -40,3 +40,9 @@ jobs:
 
             - name: 'Run build'
               run: npm run build
+
+            - name: "Upload production ready build files"
+              uses: actions/artifact@v4
+              with:
+                name: build
+                path: dist
